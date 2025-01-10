@@ -1,85 +1,50 @@
+# React + TypeScript + Vite
 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-# WildEarthMonitor - Frontend
+Currently, two official plugins are available:
 
-Welcome to the **WildEarthMonitor Frontend** repository. This project serves as the user interface for monitoring environmental data, such as deforestation trends, by leveraging powerful APIs and data visualization tools.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 📋 Features
-- **Dynamic User Interface**: Built using React.js and Tailwind CSS for responsiveness and modern design.
-- **Global State Management**: Managed with Redux for scalability and maintainability.
-- **Type-Safe Development**: Enhanced by TypeScript for better developer experience and error handling.
-- **Data Visualization**: Displays environmental data using charts, graphs, and maps.
+## Expanding the ESLint configuration
 
----
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## 🛠️ Technologies
-- **React.js**: Component-based framework for building user interfaces.
-- **Redux**: For predictable and scalable global state management.
-- **TypeScript**: Ensures type safety and maintainable code.
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
-- **React Redux Toolkit**: Simplifies Redux development with best practices.
+- Configure the top-level `parserOptions` property like this:
 
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-Before you begin, ensure you have the following installed:
-- [Node.js](https://nodejs.org/) (version 16.x or higher)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-
-### 1. Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/wildearthmonitor-frontend.git
-   cd wildearthmonitor-frontend
-
-### 2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-### 3. Start the development server:
- ```bash
-npm start
-# or
-yarn start
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-### 4. Open your browser and navigate to: http://localhost:3000
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-## 🧑‍💻 Development Workflow
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-### Adding New Features
-
-### 1. Create a new branch for the feature:
- ```bash 
- git checkout -b feature/new-feature-name 
- ```
-
-### 2. Implement the feature and test it locally.
-
-### 3. Push your changes and create a pull request:
- ```bash 
- git push origin feature/new-feature-name 
- ```
-
-## 🤝 Contributing
-We welcome contributions! To get started:
-
-### 1. Fork the repository.
-
-### 2. Clone your fork and create a feature branch:
- ```bash 
- git checkout -b feature-name 
- ```
-
-### 3. Commit your changes and push:
- ```bash 
- git commit -m "Add feature description"
-git push origin feature-name 
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
 ```
-
-### 4. Open a pull request for review.
