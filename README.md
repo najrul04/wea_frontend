@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# Wild Earth Monitor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Wild Earth Monitor** is an enterprise-level web application designed to visualize deforestation and environmental data from the **Global Forest Watch API** and **NASA Earth Science APIs**. This project aims to provide users with up-to-date and interactive insights into environmental changes that impact forests and ecosystems worldwide.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- View global deforestation data from **Global Forest Watch API**.
+- Display environmental data related to climate change and forests using **NASA Earth Science APIs**.
+- Dynamic user interface built with **React.js**, **TypeScript**, and **Tailwind CSS**.
+- State management with **Redux** for efficient data handling.
+- GraphQL integration for efficient data querying and mutation.
+- Scalable backend built with **Node.js** and **NestJS**.
+- Environmentally conscious app design and functionality.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Frontend
 
-- Configure the top-level `parserOptions` property like this:
+- **React.js**: JavaScript library for building user interfaces.
+- **TypeScript**: Type-safe programming with static type checking.
+- **Tailwind CSS**: Utility-first CSS framework for building custom designs.
+- **Redux**: State management for React apps.
+- **GraphQL**: Efficient data querying and mutation.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Backend
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Node.js**: JavaScript runtime for building scalable network applications.
+- **NestJS**: A progressive Node.js framework for building efficient and scalable applications.
+- **GraphQL**: For querying and mutating data efficiently.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### APIs
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Global Forest Watch API**: Provides data related to global deforestation.
+- **NASA Earth Science APIs**: Offers climate and environmental data from NASA.
+
+### Database
+
+- **MongoDB**: A NoSQL database for storing environmental data.
+- **Mongoose**: ODM (Object Data Modeling) library for MongoDB and Node.js.
+
+### Containerization
+
+- **Docker**: For creating consistent development and production environments.
+
+### Deployment
+
+- **AWS**: Scalable hosting for deploying applications.
