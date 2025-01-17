@@ -1,6 +1,6 @@
 
 import './App.css'
-import Forest from './components/Forest/forest'
+import Forest from './components/Forest/Forest'
 
 function App() {
 
