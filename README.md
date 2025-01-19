@@ -19,7 +19,7 @@
 - **React.js**: JavaScript library for building user interfaces.
 - **TypeScript**: Type-safe programming with static type checking.
 - **Tailwind CSS**: Utility-first CSS framework for building custom designs.
-- **Redux**: State management for React apps.
+- **Redux**: State management for React apps. (Optional)
 - **GraphQL**: Efficient data querying and mutation.
 
 ### Backend
