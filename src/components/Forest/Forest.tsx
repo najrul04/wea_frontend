@@ -33,7 +33,7 @@ const Forest: React.FC = () => {
         <ul>
             {forestData?.map((data, index) => (
                 <li key={index}>
-                    <p>Country: {data.country}</p>
+                    <p>Countries: {data.country}</p>
                     <p>Forest Area Percentage: {data.forestAreaPercentage}%</p>
                     <p>Deforestation Rate: {data.deforestationRate}%</p>
                 </li>
