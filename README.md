@@ -31,7 +31,7 @@
 ### APIs
 
 - **Global Forest Watch API**: Provides data related to global deforestation.
-- **NASA Earth Science APIs**: Offers climate and environmental data from NASA.
+- **NASA Earth Science APIs**: Offers climate and environmental data from NASA. (For Fire Check)
 
 ### Database
 
