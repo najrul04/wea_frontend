@@ -3,13 +3,14 @@ import './Map.css'
 
 interface MapProps {
   center: {
-    lat: number;
-    lng: number;
+    lat: number,
+    lng: number
   };
-  zoom: number;
+  zoom: number
 }
-const Map: React.FC<MapProps> = ({ center, zoom }) => {
-  const googleApi = import.meta.env.VITE_GOOGLE_API
+
+const Map: React.FC<MapProps> = ({center, zoom}) => {
+  const googleApi = import.meta.env.REACT_APP_GOOGLE_API
 
   console.log("Google API Key: ", googleApi)
   return (
