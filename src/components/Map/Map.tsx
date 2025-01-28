@@ -1,10 +1,21 @@
 import GoogleMapReact from 'google-map-react'
 import './Map.css'
-const Map = ({center, zoom}) => {
+
+interface MapProps {
+  center: {
+    lat: number;
+    lng: number;
+  };
+  zoom: number;
+}
+const Map: React.FC<MapProps> = ({ center, zoom }) => {
+  const googleApi = import.meta.env.VITE_GOOGLE_API
+
+  console.log("Google API Key: ", googleApi)
   return (
     <div className='map'>
         <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyApp-tbo0DjJGkv7qJyYr8Cbgetv1uJ_3Y' }}
+        bootstrapURLKeys={{ key: googleApi}}
         defaultCenter={ center }
         defaultZoom={ zoom }
         />
