@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "./../../../assets/logo/Wild Earth Monitor.webp"
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,7 @@ const Nav = () => {
     <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
-        <a href="#" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src={logo}
             className="h-8 mr-4"
@@ -26,7 +27,7 @@ const Nav = () => {
           <span className="text-2xl font-semibold whitespace-nowrap dark:text-white">
            Wild Earth Monitor
           </span>
-        </a>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
