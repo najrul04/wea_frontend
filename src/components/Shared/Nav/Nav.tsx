@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "./../../../assets/logo/Wild Earth Monitor.webp"
+import logo from "./../../../assets/logo/Wild Earth Monitor.webp";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
@@ -19,13 +19,9 @@ const Nav = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img
-            src={logo}
-            className="h-8 mr-4"
-            alt="Logo"
-          />
+          <img src={logo} className="h-8 mr-4" alt="Logo" />
           <span className="text-2xl font-semibold whitespace-nowrap dark:text-white">
-           Wild Earth Monitor
+            Wild Earth Monitor
           </span>
         </Link>
 
@@ -59,21 +55,21 @@ const Nav = () => {
           <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0">
             {/* Home */}
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="block py-2 px-3 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
               >
                 Home
-              </a>
+              </Link>
             </li>
             {/* About Us */}
             <li>
-              <a
-                href="#"
+              <Link
+                to="about"
                 className="block py-2 px-3 text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
               >
-                About Us
-              </a>
+                About
+              </Link>
             </li>
             {/* Dropdown Menu */}
             <li className="relative">
@@ -101,17 +97,19 @@ const Nav = () => {
               {isDropdownOpen && (
                 <ul className="absolute left-0 z-10 w-44 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-700">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/wildfire"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600"
+                      onClick={() => setIsDropdownOpen(false)} // Close dropdown on click
                     >
                       Wildfire Tracker
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
                       href="#"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600"
+                      onClick={() => setIsDropdownOpen(false)} // Close dropdown on click
                     >
                       Forest
                     </a>
@@ -120,6 +118,7 @@ const Nav = () => {
                     <a
                       href="#"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600"
+                      onClick={() => setIsDropdownOpen(false)} // Close dropdown on click
                     >
                       Deforestation
                     </a>
