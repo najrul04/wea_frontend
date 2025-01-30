@@ -1,6 +1,7 @@
 
 import './App.css'
 import Forest from './components/Forest/Forest'
+import Map from './components/Map/Map'
 import Nav from './components/Shared/Nav/Nav'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <div>
         <Nav/>
         <Forest/>
+        <Map/>
       </div>
     </>
   )
