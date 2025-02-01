@@ -9,7 +9,6 @@ import About from './components/About/About'
 import WildFire from './components/WorldEvents/WildFire/WildFire'
 
 function App() {
-
   return (
     
       <div>
