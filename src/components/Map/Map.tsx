@@ -1,5 +1,6 @@
 import GoogleMapReact from 'google-map-react';
 import './Map.css';
+import LocationMarker from '../LocationMarker/LocationMarker';
 
 interface MapProps {
   center: {
@@ -19,7 +20,9 @@ const Map: React.FC<Partial<MapProps>> = ({ center, zoom }) => {
         bootstrapURLKeys={{ key: googleApi }}
         defaultCenter={center}
         defaultZoom={zoom}
-      />
+      >
+        <LocationMarker lat={center?.lat} lng={center?.lng} />
+      </GoogleMapReact>
     </div>
   );
 };
