@@ -11,7 +11,7 @@ interface MapProps {
 }
 
 const Map: React.FC<Partial<MapProps>> = ({ center, zoom }) => {
-  const googleApi = import.meta.env.REACT_APP_GOOGLE_API;
+  const googleApi = import.meta.env.VITE_GOOGLE_API;
 
   console.log('Google API Key: ', googleApi);
   return (
